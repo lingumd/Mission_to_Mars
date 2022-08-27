@@ -93,6 +93,7 @@ def mars_facts():
     try:
         # Use 'read_html' to scrape the facts table into a dataframe
         df = pd.read_html('https://galaxyfacts-mars.com')[0]
+        df = df.iloc[1:,:]
 
     except BaseException:
         return None
